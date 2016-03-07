@@ -33,7 +33,7 @@ TEST(FieldTest, checkSafe)
 	catch(...){
 		safe=1;
 	}
-	ASSERT_TRUE(safe,1 );
+	ASSERT_EQ(safe,1 );
 }
 
 
@@ -72,7 +72,7 @@ TEST(FieldTest, isSafenegative)
   {
     safe=1;
   }
-	ASSERT_TRUE(safe,1 );
+	ASSERT_EQ(safe,1 );
 }
 
 
