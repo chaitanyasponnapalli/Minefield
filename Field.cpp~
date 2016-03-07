@@ -71,6 +71,5 @@ FieldType Field::get(int x, int y)
 **/
 void Field::revealAdjacent(int x, int y)
 {
-	
 	//TODO: Complete this function, revealAdjacent(int,int)
 }
