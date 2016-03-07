@@ -56,30 +56,23 @@ TEST(FieldTest, isSafeinbounds)
   	ASSERT_TRUE( minefield.isSafe(6,0) );
 }
 
-TEST(FieldTest, isSafeoutofbounds)
-{
-	Field minefield;
-  try
-  {
-  	ASSERT_TRUE( minefield.isSafe(69949,56387) );
-  }
-  catch(...)
-  {
-    cout << "Exeption out of bounds" << endl;
-  }
-}
 
-TEST(FieldTest, isSafe4)
+TEST(FieldTest, isSafenegative)
 {
+
+
+
 	Field minefield;
+	int safe=0;
   try
   {
-  	ASSERT_TRUE( minefield.isSafe(-5,-7) );
+  	minefield.isSafe(-5,-7)
   }
   catch(...)
   {
-    cout << "Exeption out of bounds" << endl;
+    safe=1;
   }
+	ASSERT_TRUE(safe,1 );
 }
 
 
