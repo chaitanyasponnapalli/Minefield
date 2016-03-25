@@ -37,6 +37,12 @@
  		_map[x][y] = MINE_HIDDEN;
  }
 
+ void Field::showMine(int x, int y)
+ {
+	if(inBounds(x,y))
+		_map[x][y] = MINE_SHOWN;
+ }
+
 /**
  * Retrieves the state of the field at location (x,y)
 **/

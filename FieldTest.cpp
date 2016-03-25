@@ -74,7 +74,51 @@ TEST(FieldTest, revealAdjacentFirstRowEmpty)
 	ASSERT_EQ( MINE_HIDDEN, minefield.get(1,0) );
 }
 
+TEST(FieldTest, revealAdjacentOutofBounds){
+	Field minefield;
+	bool inbounds = true;
+	try{
+		minefield.revealAdjacent(1,20);
+		minefield.get(1,20);
+	}
+	
+	catch(...){
+		inbounds = false;
+	}
+	ASSERT_FALSE(inbounds);
+	
+	
+}
 
+TEST(FieldTest, revealAdjacentShowMine)
+{
+	Field minefield;
+
+	for(int y=0; y<10; y++)
+		minefield.showMine(1,y);
+	
+	minefield.revealAdjacent(2,0);
+	ASSERT_EQ( EMPTY_SHOWN, minefield.get(3,0) );
+	ASSERT_EQ( EMPTY_SHOWN, minefield.get(9,9) );
+	ASSERT_EQ( EMPTY_HIDDEN, minefield.get(0,0) );
+	ASSERT_EQ( MINE_SHOWN, minefield.get(1,0) );
+	
+	
+}
+
+TEST(FieldTest, showMineOutofBounds)
+{
+	Field minefield;
+	bool inbounds = true;
+	try{		
+		minefield.showMine(1,12);
+		minefield.get(1,12);
+	}
+	catch(...){
+		inbounds = false;	
+	}
+	ASSERT_FALSE(inbounds);	
+}
 
 
 

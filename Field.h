@@ -23,6 +23,7 @@ class Field
 		FieldType get(int,int);
 		void revealAdjacent(int, int);
 		void placeMine(int, int);
+	    void showMine(int, int);
 		
 
 	private:
