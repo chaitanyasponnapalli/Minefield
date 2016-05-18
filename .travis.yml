@@ -1,0 +1,10 @@
+language: cpp
+compiler:
+- clang
+branches:
+  only:
+  - branchcov
+script:
+- make clean
+- make
+- ./FieldTest
